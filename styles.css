@@ -1,0 +1,309 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body,
+ul,
+li {
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #76c7c0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+main {
+    /* display: flexbox; */
+    grid-template-columns: 1fr;/* repeat(auto-fit, minmax(300px, 1fr)); */
+    gap: 2rem;
+    width: 90%;
+    margin: auto;
+}
+
+.title {
+    color: white;
+    width: 100%;
+    background-color: rgb(47, 133, 90);
+    display: inline-block;
+    padding-top: 1rem;
+    position: sticky;
+    top: 0px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #2f855a;
+    padding: 1rem;
+}
+
+.tab-button {
+    background-color: #2f855a;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    margin: 0 0.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tab-button.active {
+    background-color: rgb(64, 182, 123);
+}
+
+.tab-button:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    background-color: rgb(39, 103, 73);
+}
+
+.tab-content {
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
+
+.tab-content {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    max-width: 80dvw;
+}
+
+input, 
+select {
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+input[disabled] {
+    background-color: rgb(233, 233, 233);
+}
+
+label {
+    font-weight: bold;
+}
+
+#searchFields {
+    width: 360px;
+    gap: 1rem;
+}
+
+.findBtn {
+    padding: 1rem;
+    background-color: rgb(47, 133, 90);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    justify-content: center;
+}
+
+.findBtn:hover {
+    background-color: rgb(39, 103, 73);
+}
+
+.hidden {
+    display: none;
+}
+
+#searchResults h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+}
+
+#ProgTemp {
+    font-size: 18px;
+    margin: 0 0 0.5rem;
+}
+
+#platformTable {
+    padding: 1.5rem;
+    justify-content: center;
+    width: 540px;
+}
+
+.grid-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.5rem;
+    align-items: start;
+}
+
+@media (max-width: 960px) {
+    .grid-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .grid-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+fieldset {
+    border: 2px solid rgb(64, 182, 123);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+fieldset legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(64, 182, 123);
+}
+
+.inputGroup {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.addBtn {
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(47, 133, 90);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.addBtn:hover {
+    background-color: rgb(39, 103, 73);
+    color: white;
+}
+
+.items {
+    display: flex;
+    justify-content: center;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    position: relative;
+    text-align: start;
+    font-size: 16px;
+}
+
+table td:last-child {
+    text-align: center;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    max-width: 60px;
+}
+
+th {
+    padding: 12px 8px;
+    background-color: rgb(64, 182, 123);
+    color: white;
+}
+
+td {
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(243, 243, 243);
+}
+
+tr:hover {
+    background-color: rgb(200, 199, 199);
+    transition: 0.3s ease;
+}
+
+.link-cell {
+    text-align: center;
+}
+  
+.link-icon {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+  
+.link-icon:hover {
+    transform: scale(1.25);
+}
+
+.close {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #f44336;
+    font-weight: bolder;
+}
+
+#myTable {
+    min-width: 960px;
+}
+
+
+footer {
+    padding: 1rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(47, 133, 90);
+    color: white;
+    text-align: center;
+}

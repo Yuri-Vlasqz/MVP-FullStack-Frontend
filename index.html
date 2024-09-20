@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Projeto MVP</title>
+</head>
+
+<body>
+     <!-- Cabeçalho -->
+    <header>
+        <div class="title">
+            <h1>Tudo a ver</h1>
+        </div>
+    </header>
+  
+    <!-- Seção de navegação de abas -->
+    <nav>
+        <button class="tab-button active" onclick="showTab(0)">Pesquisa</button>
+        <button class="tab-button" onclick="showTab(1)">Programas Disponíveis</button>
+    </nav>
+
+    <main>
+        <section class="tab-content">
+            
+            <!-- Aba de procura -->
+            <article class="tab" id="tab-0">
+
+                <!-- Campos da pesquisa -->
+                <div id="searchFields" class="card">
+
+                    <label for="searchProg">Programa:</label>
+                    <input type="text" id="searchProg" placeholder="Procure um programa...">
+
+                    <label for="searchPais">País:</label>
+                    <input type="text" id="searchPais" placeholder="Selecione um país...">
+
+                    <button onclick="procuraProgLocal()" class="findBtn">Procurar</button>
+
+                </div>
+
+                <!-- Resultado da pesquisa -->
+                <section id="searchResults" class="card hidden">
+
+                    <h2 id="progNome"></h2>
+                    <p id="ProgTemp"></p>
+
+                    <div class="table-wrapper">
+                        <table id="platformTable">
+                            <thead id="platformTableHead">
+                                <!-- cabeçalho dinâmico das plataformas -->
+                            </thead>
+                            <tbody id="platformTableBody">
+                                <!-- Informações dinâmicas das plataformas -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </article>
+
+            <!-- Aba de listagem e adição de programas -->
+            <article class="tab" id="tab-1">
+                <section class="card">
+                    <h2>Adicione seu programa</h2>
+                    <section class="newItem">
+
+                        <!-- Campos de programa -->
+                        <fieldset class="field-group">
+                            <legend>Programa</legend>
+                            <div class="grid-group">
+                                <div class="inputGroup">
+                                    <label for="newProg">Nome:</label>
+                                    <input type="text" id="newProg">
+                                </div>
+                                <div class="inputGroup">
+                                    <label for="newTipo">Tipo:</label>
+                                    <select id="newTipo">
+                                        <option id="tipoPadrao" value="" selected disabled hidden>Escolha o tipo...</option>
+                                        <option value="Série">Série</option>
+                                        <option value="Filme">Filme</option>
+                                    </select>
+                                </div>
+                                <div class="inputGroup">
+                                    <label for="newTemp">Temporadas / Duração:</label>
+                                    <input type="number" id="newTemp" placeholder="N° / Minutos...">
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        <!-- Campos de plataforma -->
+                        <fieldset class="field-group">
+                            <legend>Plataforma</legend>
+                            <div class="grid-group">
+                                <div class="inputGroup">
+                                    <label for="newPlat">Nome:</label>
+                                    <input type="text" id="newPlat">
+                                </div>
+                                <div class="inputGroup">
+                                    <label for="newPais">País:</label>
+                                    <input type="text" id="newPais">
+                                </div>
+                                <div class="inputGroup">
+                                    <label for="newTempDisp">Temporadas disponíveis:</label>
+                                    <input type="text" id="newTempDisp" placeholder="na plataforma...">
+                                </div>
+
+                                <div class="inputGroup">
+                                    <label for="newDataLim">Data final em cartaz:</label>
+                                    <input type="date" id="newDataLim">
+                                </div>
+
+                                <div class="inputGroup">
+                                    <label for="newLink">Link do programa:</label>
+                                    <input type="text" id="newLink" placeholder="na plataforma...">
+                                </div>
+
+                            </div>
+                            
+                        </fieldset>
+
+                    </section>
+
+                    <button onclick="newItem()" class="addBtn">Adicionar</button>
+
+                </section>
+
+                <!-- Tabela com banco de dados -->
+                <section class="card items">
+                    <h2>Lista de programas</h2>
+                    <div class="table-wrapper">
+                        <table id="myTable">
+                            <thead>
+                                <tr>
+                                    <th>Programa</th>
+                                    <th>Tipo</th>
+                                    <th>Temporadas<br>/ Duração</th>
+                                    <th>Plataforma</th>
+                                    <th>País</th>
+                                    <th>Temporadas Disponíveis</th>
+                                    <th>Data Limite</th>
+                                    <th>Link</th>
+                                    <th><img src="imgs/lixeira.png" width="16px" height="16px" alt="Ícone de exclusão"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- itens do banco de dados -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Projeto Tudo a ver</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
