@@ -30,7 +30,7 @@ getList()
 
 /*
   --------------------------------------------------------------------------------------
-  Função para obter lista de disponibilidades de um programa em um pais via requisição GET (WIP)
+  Função pesquisa lista de disponibilidades por programa e pais via requisição GET
   --------------------------------------------------------------------------------------
 */
 const procuraProgLocal = () => {
@@ -55,6 +55,7 @@ const procuraProgLocal = () => {
           displayResults(data.disponibilidades);
         }
         else {
+          searchResults.classList.add('hidden');
           alert("programa não encontrado!");
         }
       })
@@ -199,8 +200,8 @@ const newItem = () => {
   for (var i = 1; i < table.rows.length; i++) {
     var cells = table.rows[i].getElementsByTagName('td');
     if (cells[0].innerHTML.toLowerCase() === inputPrograma.toLowerCase() && 
-        cells[2].innerHTML.toLowerCase() === inputPlat.toLowerCase() && 
-        cells[3].innerHTML.toLowerCase() === inputPais.toLowerCase()) {
+        cells[3].innerHTML.toLowerCase() === inputPlat.toLowerCase() && 
+        cells[4].innerHTML.toLowerCase() === inputPais.toLowerCase()) {
       repetido = true;
       break;
     }
@@ -209,11 +210,11 @@ const newItem = () => {
   let commonInputs = [inputPrograma, inputTemps, inputPlat, inputPais, inputDataLim, inputLink];
   let extraInput = inputTipo === "Série" ? inputTempDisp : null; 
 
-  if (inputTipo === '') {
-    alert("Selecione o tipo do programa");
-  }
-  else if (commonInputs.includes('') || (extraInput !== null && extraInput === '')) {
+  if (commonInputs.includes('') || (extraInput !== null && extraInput === '')) {
     alert("Digite todos os campos ativos!");
+  }
+  else if (inputTipo === "") {
+    alert("Selecione o tipo do programa");
   }
   else if (repetido){
     alert(`${inputPrograma} em ${inputPlat} ${inputPais} Repetido!`)
