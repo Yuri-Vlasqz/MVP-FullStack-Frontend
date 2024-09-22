@@ -2,6 +2,8 @@
 
 Este repositório contém a implementação do front-end do **MVP** (_Minimum Viable Product_) da _Sprint_ de **Desenvolvimento _Full Stack_ Básico** do Curso de Engenharia de Software da PUC-Rio. A SPA (_Single Page Application_) foi construída utilizando `HTML`,`CSS` e `JavasScript`. A parte do back-end pode ser acessada em [MVP-FullStack-API](https://github.com/Yuri-Vlasqz/MVP-FullStack-API).
 
+No contexto da crescente variedade de serviços de streaming e a variação de conteúdo de acordo com a localização geográfica, pode ser difícil para os usuários identificar quais programas estão disponíveis em sua região.
+
 > O projeto completo consiste em uma aplicação web que permite aos usuários buscar séries e filmes disponíveis em plataformas de _streaming_ de um país específico. Além disso, oferece funcionalidades de cadastro, deleção e listagem de programas de TV em um banco de dados local.
 
 ### Principais funcionalidades da SPA:
